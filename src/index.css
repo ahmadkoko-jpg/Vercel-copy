@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --color-mist: #edf0f3;
+  --color-panel: #ffffff;
+  --color-ink: #172033;
+  --color-muted: #5d6779;
+  --color-line: #d5dae2;
+  --color-cobalt: #2c3fd1;
+  --color-cobalt-dark: #2333a8;
+  --color-danger: #b42318;
+}
+
+body {
+  background: var(--color-mist);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-cobalt);
+  outline-offset: 2px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.375rem;
+  padding: 0.625rem 1rem;
+  font-weight: 500;
+  transition: background-color 0.15s;
+  cursor: pointer;
+}
+.btn-primary { background: var(--color-cobalt); color: #fff; }
+.btn-primary:hover { background: var(--color-cobalt-dark); }
+.btn-primary:disabled { background: var(--color-line); color: var(--color-muted); cursor: not-allowed; }
+.btn-ghost { border: 1px solid var(--color-line); background: var(--color-panel); }
+.btn-ghost:hover { border-color: var(--color-ink); }
+
+.field {
+  width: 100%;
+  border: 1px solid var(--color-line);
+  background: var(--color-panel);
+  border-radius: 0.375rem;
+  padding: 0.625rem 0.75rem;
+}
+.field:focus { border-color: var(--color-cobalt); outline: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
